@@ -1,0 +1,16 @@
+
+export async function testdropDown1_change(event) {
+
+//in this case i used name. i'd recommend you use something more unique like email or uid.
+     let selectedIndex = $w('#testdropDown1').selectedIndex
+    let selectedValue = $w('#testdropDown1').options[selectedIndex].value
+
+    console.log("SELECTED VALUE: ", selectedValue)
+    const data = await getFinaleRowsAndColumns('hl')
+    const rows = data.formattedRows
+    console.log("All rows", rows)
+    const userRow = rows.find(row => row.Name=== selectedValue);
+    const userRowIndex = rows.find(row => row.Name=== selectedValue);
+    console.log("UserRow row: ", userRow)
+    console.log("UserRowIndex: ", userRowIndex.rowIndex)
+}
